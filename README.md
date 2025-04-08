@@ -103,15 +103,6 @@ streamlit run app.py
 
 ---
 
-## 🙌 Future Improvements
-
-- Add charts to visualize predictions and dataset insights
-- Integrate with a database for user tracking
-- Build a mobile version of the interface
-- Incorporate deep learning models for improved accuracy
-
----
-
 ## 👤 Author
 
 **Nitya Chauhan**
