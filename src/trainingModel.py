@@ -28,3 +28,21 @@ rf = RandomForestClassifier()
 
 svm.fit(X_train_scaled,y_train)
 rf.fit(X_train_scaled,y_train)
+
+from sklearn.model_selection import GridSearchCV
+
+param_grid = {
+    'n_estimators': [100, 200],
+    'max_depth': [None,20],
+    'min_samples_split': [2, 5],
+    'min_samples_leaf': [1, 2]
+}
+
+rfc = RandomForestClassifier(class_weight='balanced',random_state=42)
+
+grid_search = GridSearchCV(estimator=rfc, param_grid=param_grid,
+                           cv=3, n_jobs=-1, verbose=1, scoring='accuracy')
+grid_search.fit(X_train_scaled, y_train)
+
+best_rfc = grid_search.best_estimator_
+print("Best Parameters:", grid_search.best_params_)
