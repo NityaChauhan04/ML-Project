@@ -2,8 +2,8 @@ import streamlit as st
 import joblib
 import numpy as np
 
-model = joblib.load('../models/random_forest_model.pkl')
-scaler = joblib.load('../models/scaler.pkl')
+model = joblib.load('./models/random_forest_model.pkl')
+scaler = joblib.load('./models/scaler.pkl')
 
 def predict_sleep_disorder(model, scaler, input_dict):
     class_labels = {0: 'Healthy', 1: 'Sleep Apnea', 2: 'Insomnia'}
